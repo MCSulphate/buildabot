@@ -16,6 +16,7 @@
   },
   "author": "sulphate",
   "license": "ISC",
+  "keywords": ["discord", "bot", "easy"],
   "dependencies": {
     "coloured-logger": "^1.6.4",
     "discord.js": "^11.3.2",
