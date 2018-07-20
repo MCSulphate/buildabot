@@ -1,0 +1,22 @@
+{
+  "name": "buildabot",
+  "version": "1.2.15",
+  "description": "A package designed to create super-easy event and command-based Discord bots using the discord.js package.",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run clean && cp -r lib build/lib && cp index.js build/index.js && cp package.json build/package.json",
+    "clean": "rm -rf build && mkdir build"
+  },
+  "bin": {
+    "bab": "./cli/buildabot.js"
+  },
+  "author": "sulphate",
+  "license": "ISC",
+  "dependencies": {
+    "coloured-logger": "^1.6.4",
+    "discord.js": "^11.3.2",
+    "erlpack": "github:hammerandchisel/erlpack",
+    "inquirer": "^6.0.0",
+    "uws": "^10.148.0"
+  }
+}
