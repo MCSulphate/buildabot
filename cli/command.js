@@ -41,7 +41,7 @@ function createCommand(commandName, argsText, description, permissions) {
         return;
     }
     
-    log.success(`Successfully created the command. It can be found in the ./buildabot/commands/ folder from your project root.`);
+    log.info(`Successfully created the command. It can be found in the ./buildabot/commands/ folder from your project root.`);
 }
 
 function tryCreateFolder(path) {

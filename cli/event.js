@@ -33,7 +33,7 @@ function createEvent(fileName, eventName) {
         return;
     }
     
-    log.success(`Successfully created the event handler. It can be found in the ./buildabot/events/ folder from your project root.`);
+    log.info(`Successfully created the event handler. It can be found in the ./buildabot/events/ folder from your project root.`);
 }
 
 function tryCreateFolder(path) {
