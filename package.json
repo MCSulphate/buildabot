@@ -1,6 +1,6 @@
 {
   "name": "buildabot",
-  "version": "1.2.15",
+  "version": "1.3.0",
   "description": "A package designed to create super-easy event and command-based Discord bots using the discord.js package.",
   "main": "index.js",
   "repository": {
