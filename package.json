@@ -24,7 +24,6 @@
   "dependencies": {
     "coloured-logger": "^1.6.4",
     "discord.js": "^11.3.2",
-    "erlpack": "github:hammerandchisel/erlpack",
     "inquirer": "^6.0.0",
     "uws": "^10.148.0"
   }
