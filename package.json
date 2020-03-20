@@ -23,7 +23,7 @@
   ],
   "dependencies": {
     "coloured-logger": "^1.6.4",
-    "discord.js": "^11.3.2",
+    "discord.js": "^12.0.2",
     "inquirer": "^6.0.0",
     "uws": "^10.148.0"
   }
