@@ -59,11 +59,11 @@ const eventHandler = require("./lib/eventHandler");
     };
 
     // Load events.
-    eventHandler.initEventHandler(settings, data, client);
+    eventHandler.initEventHandler(globals);
     log.info("Loaded event handlers.");
 
     // Load commands.
-    cmdHandler.initCommandHandler(settings, data, client);
+    cmdHandler.initCommandHandler(globals);
     log.info("Loaded commands.");
 
     // Exit if the bot failed to start.
