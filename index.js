@@ -44,6 +44,12 @@ const eventHandler = require("./lib/eventHandler");
         return;
     }
 
+    // Log a 'ready' message when the bot has logged in.
+    // This event must be added first, to ensure it has priority over added events.
+    client.on("ready", () => {
+        log.info("Bot logged in, application started successfully.");
+    });
+
     // Load events.
     eventHandler.initEventHandler(settings, data, client);
     log.info("Loaded event handlers.");
@@ -63,10 +69,5 @@ const eventHandler = require("./lib/eventHandler");
         .catch(err => {
             log.error(`Error logging in: ${err.message}`);
         });
-
-    // Log a 'ready' message when the bot has logged in.
-    client.on("ready", () => {
-        log.info("Bot logged in, application started successfully.");
-    });
 
 })();
