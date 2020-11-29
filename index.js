@@ -50,6 +50,14 @@ const eventHandler = require("./lib/eventHandler");
         log.info("Bot logged in, application started successfully.");
     });
 
+    // Create globals here, so they are consistent across events and commands.
+    const globals = {
+        settings,
+        data,
+        client,
+        utils
+    };
+
     // Load events.
     eventHandler.initEventHandler(settings, data, client);
     log.info("Loaded event handlers.");
