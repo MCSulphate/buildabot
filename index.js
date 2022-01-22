@@ -1,6 +1,6 @@
 const log = require("coloured-logger")({ logName: "Application", useFiles: false });
 const Discord = require("discord.js");
-const client = new Discord.Client();
+const client = new Discord.Client({ intents: [Discord.Intents.FLAGS.GUILDS, Discord.Intents.FLAGS.GUILD_MEMBERS] });
 const path = require("path");
 const fs = require("fs");
 
