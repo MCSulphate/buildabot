@@ -1,13 +1,14 @@
 const log = require("coloured-logger")({ logName: "Application", useFiles: false });
 const Discord = require("discord.js");
+const Intents = Discord.Intents.FLAGS;
 const client = new Discord.Client({
     intents: [
-        Discord.Intents.FLAGS.GUILDS,
-        Discord.Intents.FLAGS.GUILD_MEMBERS,
-        Discord.Intents.FLAGS.GUILD_MESSAGES,
-        Discord.Intents.FLAGS.GUILD_INVITES,
-        Discord.Intents.FLAGS.GUILD_MESSAGE_REACTIONS,
-        Discord.Intents.FLAGS.DIRECT_MESSAGES
+        Intents.GUILDS,
+        Intents.GUILD_MEMBERS,
+        Intents.GUILD_MESSAGES,
+        Intents.GUILD_INVITES,
+        Intents.GUILD_MESSAGE_REACTIONS,
+        Intents.DIRECT_MESSAGES
     ]
 });
 const path = require("path");
