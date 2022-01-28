@@ -1,7 +1,14 @@
 const log = require("coloured-logger")({ logName: "Application", useFiles: false });
 const Discord = require("discord.js");
 const Intents = Discord.Intents.FLAGS;
-const client = new Discord.Client({
+const path = require("path");
+const fs = require("fs");
+
+const utils = require("./lib/utils");
+const cmdHandler = require("./lib/commandHandler");
+const eventHandler = require("./lib/eventHandler");
+
+const defaultOptions = {
     intents: [
         Intents.GUILDS,
         Intents.GUILD_MEMBERS,
@@ -10,17 +17,20 @@ const client = new Discord.Client({
         Intents.GUILD_MESSAGE_REACTIONS,
         Intents.DIRECT_MESSAGES
     ]
-});
-const path = require("path");
-const fs = require("fs");
+};
 
-const utils = require("./lib/utils");
-const cmdHandler = require("./lib/commandHandler");
-const eventHandler = require("./lib/eventHandler");
+let client;
 
-(function() {
-
+module.exports = function(options = defaultOptions) {
     log.info("Starting up...");
+
+    if (!options) {
+        options = defaultOptions;
+    }
+
+    client = new Discord.Client({
+        intents: options.intents
+    });
 
     // Default settings.
     const defaultSettings = {
@@ -88,4 +98,4 @@ const eventHandler = require("./lib/eventHandler");
             log.error(`Error logging in: ${err.message}`);
         });
 
-})();
+};

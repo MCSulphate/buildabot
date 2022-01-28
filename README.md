@@ -17,9 +17,35 @@ Usage
 Installation
 ------------
 Install the package with `npm install buildabot`. In your main project file, simply
-use `require("buildabot");` at the top of your file to set up the bot. The bot
+use `require("buildabot")();` at the top of your file to set up the bot. The bot
 will create a folder named `buildabot` at the root of your project, make sure to
 set your bot's user token in the `settings.json` file, which is created for you.
+
+### Customising Bot Intents
+Discord now requires you to declare a set of 'intents' that your bot uses. This is
+essentially what events/interactions your bot receives and can use. Some of these
+are 'privileged', meaning you can only use them if your bot is in <100 servers, or
+if your bot has been verified.
+
+By default, buildabot uses the following set of intents:
+ - GUILDS
+ - GUILD_MEMBERS
+ - GUILD_MESSAGES
+ - GUILD_INVITES
+ - GUILD_MESSAGE_REACTIONS
+ - DIRECT_MESSAGES
+
+Since version 1.7.0, you can now customise the intents that buildabot uses, in case
+you do not want to use certain intents/privileged intents. To do so, when using
+`require("buildabot")()`, simply pass in an object with an `intents` array, containing
+a set of intent flags. You can find the intent flags by importing `discord.js`, under
+`Intents.FLAGS`. You can find more information on this [here](https://discordjs.guide/popular-topics/intents.html).
+
+An example of customising the intents might look like this:   
+```
+const { Intents } = require("discord.js");
+require("buildabot")({ intents: [ Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES ] });
+```
 
 Adding Commands and Events
 --------------------------
